@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import configureServer from "../Mirage/mirage-server";
 import { Products } from "../constants/types";
 configureServer();
@@ -18,7 +18,7 @@ export default function ProductListingPage() {
     return (<>
         <h1>ProductListingPage</h1>
         {/* .map((data: Products) => <h1>{data.name}</h1>) */}
-        {products.map((product: any) => <h1>{product.productname}</h1>)}
+        {products.map((product: any) => <><h1>{product.productname}</h1><h6> <img src={product.productimage} alt="" /></h6></>)}
     </>
     );
 }
