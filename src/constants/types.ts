@@ -3,6 +3,6 @@ export interface Products {
     productratings: number,
     productimage: string,
     productname: string,
-    producspecs: string,
+    productspecs: string,
     productprice: number,
 }
