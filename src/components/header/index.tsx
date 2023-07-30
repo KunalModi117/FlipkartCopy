@@ -1,11 +1,12 @@
+import { BrowserRouter, Link, Routes } from 'react-router-dom'
 import './header.css'
 export default function Header() {
     return (
         <div className="header_container">
-            <span>Home</span>
+            <Link to={'/'}>Home</Link>
             <span><input type="text" name="" id="" /></span>
-            <span>profile</span>
-            <span>cart</span>
+            <Link to={'/profile'}>Profile</Link>
+            <Link to={'/cart'}>Cart</Link>
         </div>
     )
 };

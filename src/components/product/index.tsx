@@ -1,6 +1,7 @@
 import './product.css'
 export default function ProductComponent({ product }: { product: any }) {
     // return <h1>{product.productname}</h1>;
+    console.log(product.productimage)
     return (
         <div className="parent_container">
             <img src={product.productimage} alt="productImage" style={{ display: "inline" }} />
