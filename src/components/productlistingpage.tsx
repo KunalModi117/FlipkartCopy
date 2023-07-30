@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import configureServer from "../Mirage/mirage-server";
 import { Products } from "../constants/types";
-import ProductComponent from "./productcomponent";
+import ProductComponent from "./product";
+import { Link } from "react-router-dom";
 configureServer();
 export default function ProductListingPage() {
     const [products, setProducts] = useState<Products[]>([]);
@@ -13,13 +14,15 @@ export default function ProductListingPage() {
         })
     }, []);
 
+
     return (
         <>
             <h1>ProductListingPage</h1>
-            {/* {products.map((product: any) => <><h1>{product.productname}</h1><h6> <img src={product.productimage} alt="" /></h6></>)} */}
-            {products.map((product: any) => {
-                return <ProductComponent product={product} />;
-            })}
+            {products.map((product: any) => (
+                <Link to={`/products/details/${product.id}`} state={product}>
+                    <ProductComponent product={product} />
+                </Link>
+            ))}
         </>
     );
 }

@@ -1,4 +1,4 @@
-import './productcomponent.css'
+import './product.css'
 export default function ProductComponent({ product }: { product: any }) {
     // return <h1>{product.productname}</h1>;
     return (
@@ -9,7 +9,7 @@ export default function ProductComponent({ product }: { product: any }) {
                 <div>{product.productratings}</div>
                 <div>{product.productspecs}</div>
             </div>
-            <div>{product.productprice}</div>
+            <div>₹{product.productprice}</div>
         </div>
     );
 }

@@ -1,19 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import ProductListingPage from './components/productlistingpage';
-import ProductDetailPage from './components/productdetailpage';
-import CartPage from './components/cartpage';
+import ProductListingPage from './components/productListingPage';
+import ProductDetailsPage from './components/productDetails';
+import CartPage from './components/cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
+import Header from './components/header';
+const ob = {
+  name: "shila",
+  age: 20,
+}
 function App() {
   return (
     <>
+      <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/products' Component={ProductListingPage} />
-          <Route path='/products/detail' Component={ProductDetailPage} />
-          <Route path='/cart' Component={CartPage} />
+          <Route path='/products' element={<ProductListingPage />} />
+          <Route path='/products/details/:id' element={<ProductDetailsPage />} action={() => { return ob }} />
+          <Route path='/cart' element={<CartPage />} />
         </Routes>
       </BrowserRouter>
     </>
