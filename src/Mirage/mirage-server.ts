@@ -3,6 +3,7 @@ export default function configureServer() {
     createServer({
         models: {
             product: Model,
+            cart: Model,
         },
 
         factories: {
@@ -23,6 +24,9 @@ export default function configureServer() {
             this.namespace = "api"
 
             this.get("/products", undefined, { timing: 1000 })
+
+            this.post("/cart");
+            this.get("/cart/:id");
         },
     })
 }
